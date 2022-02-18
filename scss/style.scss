@@ -1,0 +1,16 @@
+@import './reset.scss';
+@import 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css';
+@import './mixin.scss';
+@import './flip.scss';
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #000000, #434343);
+}
+

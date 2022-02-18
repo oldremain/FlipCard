@@ -1,0 +1,14 @@
+@mixin bg-front {
+  background: linear-gradient(to top, #f7ff00, #db36a4);
+  color: transparent;
+  background-clip: text;
+}
+@mixin icon {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 900;
+  @include bg-front;
+  font-size: 20px;
+}
+@mixin shadow {
+  box-shadow: 0 0 6px 2px rgb(243, 223, 243);
+}

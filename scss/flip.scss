@@ -1,0 +1,92 @@
+.card {
+  perspective: 1000px;
+  width: 300px;
+  height: 350px;
+}
+.card__container {
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  position: relative;
+  border-radius: 10px;
+}
+.card__front,
+.card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(to right, #232526, #414345);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  @include shadow;
+}
+.card__front > *:not(:last-child) {
+    margin-bottom: 10px;
+  }
+.front__img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.front__img::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(35, 37, 38, 0.2);
+}
+.front__title,
+.back__title {
+  font-size: 23px;
+  font-weight: bolder;
+  @include bg-front;
+}
+.front__description,
+.back__description {
+  letter-spacing: 1px;
+  font-size: 14px;
+  @include bg-front;
+}
+.card__back {
+  transform: rotateY(180deg);
+}
+.card__back > *:not(:last-child) {
+    margin-bottom: 15px;
+  }
+.social {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+.social > *:not(:last-child) {
+  margin-right: 15px;
+}
+.social__link-tg::after {
+  content: '\f2c6';
+  @include icon;
+}
+.social__link-mail::after {
+  content: '\f0d5';
+  @include icon;
+}
+.social__link-git::after {
+  content: '\f09b';
+  @include icon;
+}
+.card:hover .card__container {
+  transform: rotateY(180deg);
+}
